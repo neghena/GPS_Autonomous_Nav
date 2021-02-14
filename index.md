@@ -12,7 +12,7 @@ Our team’s project in the context of our domain is to build an autonomous GPS-
 
 ### GPS Comparisons: 1 Unit vs 2 Unit RTK 
 
-One unit: {photo here}
+One unit: <img src="Images/1_Unit_RTK_CEP.png" alt="hi" class="inline"/>
 - Description 
 Two Unit: {work in progress}
 - Description
