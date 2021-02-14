@@ -13,7 +13,7 @@ Our team’s project in the context of our domain is to build an autonomous GPS-
 ### GPS Comparisons: 1 Unit vs 2 Unit RTK 
 
 One unit: <img src="Images/1_Unit_RTK_CEP.png" alt="hi" class="inline"/>
-- Description 
+-  For the 1-Unit RTK, CEP is 0.318 feet and 2DRMS is 0.766 feet.
 Two Unit: {work in progress}
 - Description
 
@@ -22,7 +22,8 @@ Two Unit: {work in progress}
 Maybe some rviz photos & explanations of solo navigation
 
 ### GPS & IMU Autonomous Navigation 
-rviz gazebo simulation photos? & more explanaton 
+ 
+
 
 
 
