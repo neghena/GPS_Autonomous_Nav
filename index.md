@@ -14,7 +14,7 @@ Our team’s project in the context of our domain is to build an autonomous GPS-
 
 One unit: <img src="Images/1_Unit_RTK_CEP.png" alt="hi" class="inline"/>
 -  For the 1-Unit RTK, CEP is 0.318 feet and 2DRMS is 0.766 feet.
-Two Unit: {work in progress}
+- Two Unit: {work in progress}
 - Description
 
 
@@ -23,6 +23,12 @@ Maybe some rviz photos & explanations of solo navigation
 
 ### GPS & IMU Autonomous Navigation 
  
+Sensor Fusion
+<img src="Images/Sensor_Fusion.png" alt="hi" class="inline"/>
+The red arrows are the raw IMU and odometry data that we embedded
+some noise into its y-axis. The blue arrow is EKF-filtered odometry 
+and IMU data. As you can see, EKF is able to reduce the noise and 
+provide a more accurate position of the vehicle.
 
 
 
@@ -31,27 +37,10 @@ Maybe some rviz photos & explanations of solo navigation
 
 
 
-
----- extra stuff ---- 
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Snippets of Code 
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+Example code can go here. 
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
