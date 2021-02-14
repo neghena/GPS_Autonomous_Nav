@@ -6,7 +6,7 @@ You can use the [editor on GitHub](https://github.com/neghena/GPS_Autonomous_Nav
 
 ### Background 
 
-When it comes to autonomous driving, the use of a GPS is vital to its performance. 
+Our team’s project in the context of our domain is to build an autonomous GPS-based navigation system that will be robust and reliable enough to be competitive in a race. The challenge in doing so primarily comes down to understanding the shortcomings of the GPS being used so that its problems can be mitigated through supplementary methods. In addition to the differences in accuracy between GPS products at different price points, GPS’s in general tend to suffer from issues of signal interference which lead to delays in positioning updates and lack of precision as well as oscillating data even when left at a fixed position. To build a navigation system for a vehicle that will travel at high speeds, it is crucial that vehicle positioning is provided accurately and quickly. The hurdle for our project, then, is to create a reliable navigation system using GPS that can update instantaneously and precisely despite these being the characteristic issues that plague the GPS.
 
 
 
