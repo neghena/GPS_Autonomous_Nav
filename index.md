@@ -32,5 +32,10 @@ provide a more accurate position of the vehicle.
 ### Waypoint Selection and Navigation
 
 ** maybe some flow charts & explanations ***
+![buff](Images/BUFFER_RADIUS_DIAGRAM.png)
+
+![distance](Images/DISTANCE_CALUCLATION.png)
+
+![wpt](Images/WAYPOINT CONFIRMATION FLOWCHART-4.png)
 
 ### Conclusion (video of it moving?) 
