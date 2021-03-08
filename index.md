@@ -8,30 +8,27 @@ Our team’s project in the context of our domain is to build an autonomous GPS-
 
 ### GPS Comparisons: u-blox NEO-M8N vs ZED-F9P
 NEO-M8N Performance:
+![Sensor Fusion](Images/neo_m8n_cep_2drms.png)
 
-
+- For the NEO-M8N, CEP is 1.532 meters and the 2DRMS: 3.710 meters.
 
 ZED-F9P Performance:
 
 ![Sensor Fusion](Images/1_Unit_RTK_CEP.png)
 
-- For the ZED-F9P, CEP is 0.318 feet and 2DRMS is 0.766 feet.
-- For the NEO-M8N, CEP is .... and 2DRMS is ....
-- Description: comparison & results
+- For the ZED-F9P, CEP is 0.097 meters and the 2DRMS is 0.233 meters.
 
-### GPS Solo Navigation
-
-Maybe some rviz photos & explanations of solo navigation
+From these results, we can see that the ZED-F9P performs significantly better then the NEO-M8N. Thus we chose this GPS for the purposes of developing an autonomously navigating vehicle! 
 
 ### GPS & IMU Sensor Fusion
  
-Sensor Fusion
+We fused together our GPS with an IMU using an Extended Kalman Filter (EKF). 
 
 ![Sensor Fusion](Images/Sensor_Fusion.png)
 
 The red arrows are the raw IMU and odometry data that we embedded
 some noise into its y-axis. The blue arrow is EKF-filtered odometry 
-and IMU data. As you can see, EKF is able to reduce the noise and 
+and IMU data. As you can see, the EKF is able to reduce the noise and 
 provide a more accurate position of the vehicle.
 
 
