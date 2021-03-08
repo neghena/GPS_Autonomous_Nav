@@ -28,6 +28,8 @@ some noise into its y-axis. The blue arrow is EKF-filtered odometry
 and IMU data. As you can see, the EKF is able to reduce the noise and 
 provide a more accurate position of the vehicle.
 
+![sims](Images/ground_truth_vs_estimated.png)
+Our simulated tests of the vehicle proved to be successful! Over the course of a full lap around the UCSD Warren track, the EKF algorithm was able to reduce the error in localization error essentially down to zero. 
 
 ### Waypoint Selection and Navigation
 
