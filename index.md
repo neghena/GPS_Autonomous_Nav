@@ -20,7 +20,9 @@ ZED-F9P Performance:
 
 From these results, we can see that the ZED-F9P performs significantly better then the NEO-M8N. Thus we chose this GPS for the purposes of developing an autonomously navigating vehicle! 
 
-![neo](Images/neo_m8n_cep_2drms.png) ![zed](Images/1_Unit_RTK_CEP.png)
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![Sensor Fusion](Images/neo_m8n_cep_2drms.png)  |  ![Sensor Fusion](Images/1_Unit_RTK_CEP.png)
 
 ### GPS & IMU Sensor Fusion
  
