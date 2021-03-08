@@ -22,7 +22,7 @@ From these results, we can see that the ZED-F9P performs significantly better th
 
 Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
-![Sensor Fusion](Images/neo_m8n_cep_2drms.png)  |  ![Sensor Fusion](Images/1_Unit_RTK_CEP.png)
+![Sensor Fusion](Images/neo_m8n_cep_2drms.png)  |  ![Sensor Fusion](Images/zed_f9p_park_cep_2drms.png)
 
 ### GPS & IMU Sensor Fusion
  
