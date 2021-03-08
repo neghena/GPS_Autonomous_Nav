@@ -36,8 +36,14 @@ Our simulated tests of the vehicle proved to be successful! Over the course of a
 ** maybe some flow charts & explanations ***
 ![buff](Images/BUFFER_RADIUS_DIAGRAM.png)
 
+We set a buffer radius for each waypoint we want to go to so that we don't "miss" a waypoint & make incorrect navigation choices just because noisy data. 
+
 ![distance](Images/DISTANCE_CALUCLATION.png)
 
+We use a lookahead point to determine if we've reached our current waypoint. 
+
 ![wpt](Images/WAYPOINT CONFIRMATION FLOWCHART-4.png)
+
+An overview of exactly how waypoint navigation would be determined. 
 
 ### Conclusion (video of it moving?) 
