@@ -46,4 +46,6 @@ We use a lookahead point to determine if we've reached our current waypoint.
 
 An overview of exactly how waypoint navigation would be determined. 
 
-### Conclusion (video of it moving?) 
+### Our Final Result!
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
