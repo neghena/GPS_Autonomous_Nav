@@ -57,6 +57,8 @@ In order to navigate with a GPS, an accurate vehicle heading is just as necessar
 
 ![Sensor Fusion](Images/Sensor_Fusion.png =100x20)
 
+<img src="Images/Sensor_Fusion.png" width="100" height="100">
+
 Each of the red arrows is a reading of the vehicle’s positioning and orientation as the vehicle remains in a stationary point. 
 We simulated some noise in the y-axis specifically so the readings are erratic along the y-axis even though the vehicle has not moved. 
 The blue arrow is the odometry and IMU data after it has been filtered by EKF. There are actually multiple blue arrows stacked 
