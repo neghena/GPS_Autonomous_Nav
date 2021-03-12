@@ -21,7 +21,7 @@ tags:
 Our team’s project in the context of our domain is to build an autonomous GPS-based navigation system. The challenge in this project primarily comes down to understanding the shortcomings of the GPS being used so that its problems can be mitigated through supplementary methods. Not mentioning the differences in accuracy between GPS products at different price points, GPS’s in general tend to suffer from issues of signal interference which lead to delays in positioning updates and lack of precision as well as oscillating data even when left at a fixed position. To build a navigation system for a vehicle that will travel at high speeds, it is crucial that vehicle positioning is provided accurately and quickly. The hurdle for our project, then, is to create a reliable navigation system using GPS that can update instantaneously and precisely despite these being the inherent issues that plague the GPS. 
 
 <br>
-The next 5 parts will be brief summaries of each part of our project. For a more detailed look at our project, please refer to the video at the bottom of the page.
+The next 5 sectionns will be brief summaries of each part of our project. For a more detailed look at our project, please refer to the video at the bottom of the page.
 <hr>
 
 <br>
@@ -58,7 +58,7 @@ the video attached at the bottom of the page starting at 2:05.
 
 In order to navigate with a GPS, an accurate vehicle heading is just as necessary as an accurate position. By integrating odometry, IMU, and GPS data together, we can obtain both vehicle position and orientation. To accomplish this task, we used a state estimation algorithm, Extended Kalman Filter (EKF). EKF takes in the positional information from the GPS, the acceleration and orientation data from the IMU, and the velocity measurements from both odometry and IMU to filter out noisy readings from each sensor. It provides us with an estimate of the current vehicle location more accurately than these three sensors can provide on their own and allows us to directly combine three separate data streams into a single source that contains both an accurate position and orientation. The picture below is a demonstration of EKF's accuracy. 
 
-<img src="Images/Sensor_Fusion.png" width="500" height="500">
+<img src="Images/Sensor_Fusion.png" align="center" width="500" height="500">
 
 Each of the red arrows is a reading of the vehicle’s positioning and orientation as the vehicle remains in a stationary point. 
 We simulated some noise in the y-axis specifically so the readings are erratic along the y-axis even though the vehicle has not moved. 
@@ -81,7 +81,7 @@ Thunderhill Satellite           |  Thunderhill Binary Mask
 :-------------------------:|:-------------------------:
 ![thunderhill](Images/thunderhill.png)  |  ![binary](Images/binarythunderhill.png)
 
-Once a mask is created, it is possible to implement navigation algorithms that will generate a feasible path for the vehicle. The feasible path will contain of waypoints between the start and endpoint. The idea is that between any pair of points, there exists a straight path and the vehicle can just follow a straight path until it reaches a waypoint, rotate to the angle of the new straight path, and so on until it reaches its destination. For more details of global path planning and waypoint creation, please refer to the video attached at the bottom of the page starting at 9:00. 
+Once a mask is created, it is possible to implement navigation algorithms that will generate a feasible path for the vehicle. The feasible path will consist of waypoints between the start and endpoint. The idea is that between any pair of points, there exists a straight path and the vehicle can just follow one of these straight paths until it reaches a waypoint, rotate to the angle of the new straight path, and so on until it reaches its destination. For more details of global path planning and waypoint creation, please refer to the video attached at the bottom of the page starting at 9:00. 
 <hr>
 
 <br>
@@ -91,7 +91,7 @@ Once a mask is created, it is possible to implement navigation algorithms that w
 
 One of the major challenges in waypoint navigation lies in the noisy nature of a GPS. Even if the vehicle reaches the exact position of the waypoint, the localization output may not match the waypoint coordinates, which could result in the vehicle going off-track or even turning around. To circumvent this issue, we set a buffer radius from the waypoint coordinate such that if the distance between the current vehicle position and waypoint is within this radius, the vehicle is considered to have reached the waypoint and can head towards the next. The buffer radius is based on the calculated CEP/2DRMS of the GPS in use as well as the distance between consecutive waypoints in a generated path. If the generated path has waypoints that are 0.1 meters apart with a buffer radius of 0.2 meters, then the vehicle may end up skipping waypoints. The diagram below demonstrates the concept of the buffer radius. 
 
-<img src="Images/BUFFER_RADIUS_GRAPH.png" width="500" height="500">
+<img src="Images/BUFFER_RADIUS_GRAPH.png" align="center" width="400" height="400">
 
 
 To determine if a waypoint has been reached, we first determine a lookahead point, a waypoint that is k waypoints ahead, for each waypoint. We also calculate distance between the current vehicle position and lookahead point, distance between current waypoint and lookahead point, and distance between current vehicle position and current waypoint. If the distance between current vehicle position and lookahead position is greater than the distance between current waypoint and lookahead point, then the vehicle has not reached the current waypoint yet. The vehicle should continue heading towards this waypoint and should continuously update the distance between its current position and the waypoint to determine if it is within the buffer radius. Once it is within the buffer radius, the vehicle has reached the waypoint and can start at step 1 again for the next waypoint. This algorithm continues until all waypoints have been reached. The diagrams below demonstrate the concept.
