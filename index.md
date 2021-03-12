@@ -1,8 +1,14 @@
-![map](Images/snazzy-image-2.png)
-
 ---
-
-title: "GPS Based Autonomous Navigation"
+title: "Layout: Hero Image"
+image: 
+  path: Images/snazzy-image-2.png
+  caption: "Photo from [WeGraphics](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
+categories:
+  - Layout
+tags:
+  - content
+  - image
+  - layout
 
 ---
 
