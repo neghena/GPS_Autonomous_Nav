@@ -1,9 +1,6 @@
----
-title: "GPS Based Autonomous Navigation"
+# GPS Based Autonomous Navigation
 
----
 ![map](/GPS_Autonomous_Nav/Images/map.png)
-
 
 ## An exploration into autonomous navigation built around GPS
 
