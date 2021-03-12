@@ -33,7 +33,6 @@ Our simulated tests of the vehicle proved to be successful! Over the course of a
 
 ### Waypoint Selection and Navigation
 
-** maybe some flow charts & explanations ***
 ![buff](Images/BUFFER_RADIUS_DIAGRAM.png)
 
 We set a buffer radius for each waypoint we want to go to so that we don't "miss" a waypoint & make incorrect navigation choices just because noisy data. 
