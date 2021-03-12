@@ -1,5 +1,0 @@
-markdown: kramdown
-mathjax:
-  enable: true
-  combo: "tex-svg"
-  tags: "ams"
