@@ -1,16 +1,14 @@
 ---
 title: "Layout: Hero Image"
 image: 
-  path: /images/snazzy-image.png
-  thumbnail: /images/snazzy-image.png
-  caption: "Photo from [WeGraphics](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
+  path: images/map.png
+  caption: "Photo from [SNAZZYMAPS](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
 categories:
   - Layout
 tags:
   - content
   - image
   - layout
-last_modified_at: 2018-01-31T14:28:50-05:00
 ---
 
 
