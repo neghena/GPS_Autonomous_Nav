@@ -14,6 +14,40 @@ tags:
 
 <kbd>An exploration into autonomous navigation built around GPS</kbd>
 
+Use `$$` as delimiters to enable TeX math mode, both for inline and display (i.e. block) rendering.
+
+Here is an example equation that is inline: $$a^2 + b^2 = c^2$$, where
+$$a$$, $$b$$, and $$c$$ are variables.
+
+Here is a block rendering with no default equation numbering:
+
+$$
+\frac{1}{n^{2}}
+$$
+
+And, below is a block using the `\begin{equation}` and
+`\end{equation}` LaTeX delimiters.  This equation will be numbered in
+the `ams` and `all` setting for `mathjax.tags`.
+
+$$
+\begin{equation}
+\mathbf{X}_{n,p} = \mathbf{A}_{n,k} \mathbf{B}_{k,p}    \label{test}
+\end{equation}
+$$
+
+If equation numbering is turned on, we should see an equation number here: $$\eqref{test}$$.
+
+An example using the `{align}` LaTeX environment is below.  The first equation has a `\notag` directive.
+
+$$
+\begin{align}
+(x + y) (x - y) &= x^2 + xy - xy + y^2   \notag \\
+    &= x^2 - y^2
+\end{align}
+$$
+
+
+
 ### Our Project 
 
 Our team’s project in the context of our domain is to build an autonomous GPS-based navigation system. The challenge in this project primarily comes down to understanding the shortcomings of the GPS being used so that its problems can be mitigated through supplementary methods. Not mentioning the differences in accuracy between GPS products at different price points, GPS’s in general tend to suffer from issues of signal interference which lead to delays in positioning updates and lack of precision as well as oscillating data even when left at a fixed position. To build a navigation system for a vehicle that will travel at high speeds, it is crucial that vehicle positioning is provided accurately and quickly. The hurdle for our project, then, is to create a reliable navigation system using GPS that can update instantaneously and precisely despite these being the inherent issues that plague the GPS.
