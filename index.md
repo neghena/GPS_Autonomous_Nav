@@ -1,6 +1,6 @@
 # GPS Based Autonomous Navigation
 
-![map](Images/Screen Shot 2021-03-12 at 2.08.12 AM.png)
+![map](Images/test.png)
 
 ## An exploration into autonomous navigation built around GPS
 
