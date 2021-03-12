@@ -2,7 +2,7 @@
 title: "GPS Based Autonomous Navigation"
 image: 
   path: Images/snazzy-image-3.png
-  caption: "Photo from [SnazzyMaps](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
+  caption: "Photo from [SnazzyMaps](https://snazzymaps.com/style/74/becomeadinosaur)"
 categories:
   - Layout
 tags:
@@ -12,7 +12,7 @@ tags:
 
 ---
 
-## An exploration into autonomous navigation built around GPS
+<kbd>An exploration into autonomous navigation built around GPS</kbd>
 
 ### Our Project 
 
