@@ -1,5 +1,5 @@
 ---
-title: "Layout: Hero Image"
+title: "GPS Based Autonomous Navigation"
 image: 
   path: ./Images/map.png
   caption: "Photo from [SNAZZY MAPS](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
@@ -11,8 +11,6 @@ tags:
   - layout
 ---
 
-
-# GPS Based Autonomous Navigation
 ## An exploration into autonomous navigation built around GPS
 
 ### Our Project 
