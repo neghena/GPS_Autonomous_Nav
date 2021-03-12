@@ -17,14 +17,14 @@ tags:
 <br>
 <br>
 
-### Our Project 
+### _Our Project_ 
 
 Our team’s project in the context of our domain is to build an autonomous GPS-based navigation system. The challenge in this project primarily comes down to understanding the shortcomings of the GPS being used so that its problems can be mitigated through supplementary methods. Not mentioning the differences in accuracy between GPS products at different price points, GPS’s in general tend to suffer from issues of signal interference which lead to delays in positioning updates and lack of precision as well as oscillating data even when left at a fixed position. To build a navigation system for a vehicle that will travel at high speeds, it is crucial that vehicle positioning is provided accurately and quickly. The hurdle for our project, then, is to create a reliable navigation system using GPS that can update instantaneously and precisely despite these being the inherent issues that plague the GPS.
 
 <br>
 <br>
 
-### Part 1: GPS Selection
+### _Part 1: GPS Selection_
 
 Finding a GPS accurate enough was a crucial part of our project as a navigation system built on a faulty GPS can only be so reliable. 
 To do this, we had to find metrics and develop testing procedures to compare the two GPS models that we had. The graphs below are the 
@@ -43,7 +43,7 @@ better then the NEO-M8N. Thus, we chose the ZED-F9P to fit onto our vehicle.
 <br>
 <br>
 
-### Part 2: Sensor Fusion
+### _Part 2: Sensor Fusion_
  
 Even with more accurate GPS sensors, there are still a few shortcomings that are unavoidable, such as slower frequency of messages, and 
 lack of orientation data. So we also use IMU and odometry data to provide us the data we can't get from the GPS. Fusing all three together
@@ -61,14 +61,14 @@ and IMU data, you can see that filtering noisy data using EKF data is much more 
 <br>
 <br>
 
-### Part 3: Global Path Planning
+### _Part 3: Global Path Planning_
 ![sims](Images/ground_truth_vs_estimated.png)
 Our simulated tests of the vehicle proved to be successful! Over the course of a full lap around the UCSD Warren track, the EKF algorithm was able to reduce the error in localization error essentially down to zero. 
 
 <br>
 <br>
 
-### Part 4: Waypoint Selection and Navigation
+### _Part 4: Waypoint Selection and Navigation_
 
 ![buff](Images/BUFFER_RADIUS_DIAGRAM.png)
 
