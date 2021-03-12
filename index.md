@@ -1,5 +1,3 @@
-# GPS Autonomous Navigation
-
 ## An exploration into autonomous navigation with a GPS
 
 ### Background 
