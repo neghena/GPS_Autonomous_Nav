@@ -16,7 +16,7 @@ tags:
 <br>
 <br>
 
-### _Background_ 
+### Background
 
 Our team’s project in the context of our domain is to build an autonomous GPS-based navigation system. The challenge in this project primarily comes down to understanding the shortcomings of the GPS being used so that its problems can be mitigated through supplementary methods. Not mentioning the differences in accuracy between GPS products at different price points, GPS’s in general tend to suffer from issues of signal interference which lead to delays in positioning updates and lack of precision as well as oscillating data even when left at a fixed position. To build a navigation system for a vehicle that will travel at high speeds, it is crucial that vehicle positioning is provided accurately and quickly. The hurdle for our project, then, is to create a reliable navigation system using GPS that can update instantaneously and precisely despite these being the inherent issues that plague the GPS. 
 
@@ -27,7 +27,7 @@ The next 5 sections will be brief summaries of each part of our project. For a m
 <br>
 <br>
 
-### _Part 1: GPS Selection_
+### Part 1: GPS Selection
 
 Finding a GPS accurate enough was a crucial first step of our project since a navigation system built on a faulty GPS can only be so reliable. 
 To do this, we needed metrics to evaluate the two GPS models that we had: u-blox's NEO-M8N and ZED-F9P. We use Circular Error Probable (CEP) and 2D Root Mean Square (2DRMS) to do so. We can interpret the metrics as follows:
@@ -53,7 +53,7 @@ the video attached at the bottom of the page starting at [2:05](https://youtu.be
 <br>
 <br>
 
-### _Part 2: Sensor Fusion_
+### Part 2: Sensor Fusion
  
 
 In order to navigate with a GPS, an accurate vehicle heading is just as necessary as an accurate position. By integrating odometry, IMU, and GPS data together, we can obtain both vehicle position and orientation. To accomplish this task, we used a state estimation algorithm, Extended Kalman Filter (EKF). EKF takes in the positional information from the GPS, the acceleration and orientation data from the IMU, and the velocity measurements from both odometry and IMU to filter out noisy readings from each sensor. It provides us with an estimate of the current vehicle location more accurately than these three sensors can provide on their own and allows us to directly combine three separate data streams into a single source that contains both an accurate position and orientation. The picture below is a demonstration of EKF's accuracy. 
@@ -74,7 +74,7 @@ For more details of sensor fusion, please refer to the video attached at the bot
 <br>
 <br>
 
-### _Part 3: Global Path Planning_
+### Part 3: Global Path Planning
 Creating an autonomous navigation system that is only reliant on GPS is essentially the same thing as driving blindfolded. To base navigation purely on GPS, the first requirement is to obtain a detailed map of the desired track to race on. This navigation map is a binary masked image where white indicates allowable driving area and black represents non-drivable areas. Using the Thunderhill Raceway track in Willows, CA we obtained high resolution satellite images that served as a basis for a navigation map. From this satellite image, a combination of both automatic and manual image processing techniques can be used to create the final binary mask. 
 
 Thunderhill Satellite           |  Thunderhill Binary Mask
@@ -87,7 +87,7 @@ Once a mask is created, it is possible to implement navigation algorithms that w
 <br>
 <br>
 
-### _Part 4: Waypoint Selection and Navigation_
+### Part 4: Waypoint Selection and Navigation
 
 One of the major challenges in waypoint navigation lies in the noisy nature of a GPS. Even if the vehicle reaches the exact position of the waypoint, the localization output may not match the waypoint coordinates, which could result in the vehicle going off-track or even turning around. To circumvent this issue, we set a buffer radius from the waypoint coordinate such that if the distance between the current vehicle position and waypoint is within this radius, the vehicle is considered to have reached the waypoint and can head towards the next. The buffer radius is based on the calculated CEP/2DRMS of the GPS in use as well as the distance between consecutive waypoints in a generated path. If the generated path has waypoints that are 0.1 meters apart with a buffer radius of 0.2 meters, then the vehicle may end up skipping waypoints. The diagram below demonstrates the concept of the buffer radius. 
 
