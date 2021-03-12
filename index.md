@@ -71,29 +71,34 @@ Over the course of a full lap around the UCSD Warren track, the EKF algorithm wa
 <br>
 
 ### _Part 3: Global Path Planning_
-Creating an autonomous navigation system that is only reliant on GPS is essentially the same thing as driving blindfolded. To base navigation purely on GPS, the first requirement is to obtain a detailed map of the desired track to race on. This navigation map is a binary masked image where white indicates allowable driving area and black represents non-drivable areas. Using the Thunderhill Raceway track in Willows, CA we obtained high resolution satellite images that served as a basis for a navigation map. From this satellite image, a combination of both automatic and manual image processing techniques can be used to create the final binary mask. Once a mask is created, it is possible to implement navigation algorithms that will generate a feasible path for the vehicle. 
+Creating an autonomous navigation system that is only reliant on GPS is essentially the same thing as driving blindfolded. To base navigation purely on GPS, the first requirement is to obtain a detailed map of the desired track to race on. This navigation map is a binary masked image where white indicates allowable driving area and black represents non-drivable areas. Using the Thunderhill Raceway track in Willows, CA we obtained high resolution satellite images that served as a basis for a navigation map. From this satellite image, a combination of both automatic and manual image processing techniques can be used to create the final binary mask. 
 
 Thunderhill Satellite           |  Thunderhill Binary Mask
 :-------------------------:|:-------------------------:
 ![thunderhill](Images/thunderhill.png)  |  ![binary](Images/binarythunderhill.png)
 
+Once a mask is created, it is possible to implement navigation algorithms that will generate a feasible path for the vehicle. The feasible path will contain of waypoints between the start and endpoint. The idea is that between any pair of points, there exists a straight path and the vehicle can just follow a straight path until it reaches a waypoint, rotate to the angle of the new straight path, and so on until it reaches its destination.
+<hr>
+
+<br>
+<br>
 
 ### _Part 4: Waypoint Selection and Navigation_
 
-![buff](Images/BUFFER_RADIUS_DIAGRAM.png)
+One of the major challenges in waypoint navigation lies in the noisy nature of a GPS. Even if the vehicle reaches the exact position of the waypoint, the localization output may not match the waypoint coordinates, which could result in the vehicle going off-track or even turning around. To circumvent this issue, we set a buffer radius from the waypoint coordinate such that if the distance between the current vehicle position and waypoint is within this radius, the vehicle is considered to have reached the waypoint and can head towards the next. The buffer radius is based on the calculated CEP/2DRMS of the GPS in use as well as the distance between consecutive waypoints in a generated path. If the generated path has waypoints that are 0.1 meters apart with a buffer radius of 0.2 meters, then the vehicle may end up skipping waypoints. The diagram below demonstrates the concept of the buffer radius. 
 
-We set a buffer radius for each waypoint we want to go to so that we don't "miss" a waypoint & make incorrect navigation choices just because noisy data. 
+![buff](Images/BUFFER_RADIUS_GRAPH.png)
 
-![distance](Images/DISTANCE_CALUCLATION.png)
+To determine if a waypoint has been reached, we first determine a lookahead point, a waypoint that is k waypoints ahead, for each waypoint. We also calculate distance between the current vehicle position and lookahead point, distance between current waypoint and lookahead point, and distance between current vehicle position and current waypoint. If the distance between current vehicle position and lookahead position is greater than the distance between current waypoint and lookahead point, then the vehicle has not reached the current waypoint yet. The vehicle should continue heading towards this waypoint and should continuously update the distance between its current position and the waypoint to determine if it is within the buffer radius. Once it is within the buffer radius, the vehicle has reached the waypoint and can start at step 1 again for the next waypoint. This algorithm continues until all waypoints have been reached. The diagrams below demonstrate the concept.
 
-We use a lookahead point to determine if we've reached our current waypoint. 
+Waypoint Confirmation FlowChart           |  Distance Calculation
+:-------------------------:|:-------------------------:
+![thunderhill](Images/WAYPOINT_CONFIRMATION_FLOWCHART.png)  |  ![distance](Images/WAYPOINT_CONFIRMATION_GRAPH.png)
 
-![wpt](Images/WAYPOINT CONFIRMATION FLOWCHART-4.png)
-
-An overview of exactly how waypoint navigation would be determined. 
+Once there is a reliable method for the vehicle to determine which waypoint to head towards, autonomous navigation can be simplified into determining steering angle and velocity values to send to the vehicle. When waypoint X has been reached, a new steering angle should be calculated so that the vehicle can point towards waypoint X+1 and can now, theoretically, just travel down the path between waypoint X and waypoint X+1 to reach waypoint X+1. We do a simple check to see if the current vehicle heading is the same as the upcoming waypoint’s orientation. If they are equal, there is no need to change the current steering angle, otherwise, we use a PD controller to determine the steering angle for the car based on the heading it needs to go to.
 <hr>
 
-### Our Final Result & Presentation!
+### Our Final Result & Presentation
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DJktMnLdI_I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
