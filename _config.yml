@@ -1,7 +1,7 @@
 remote_theme: "mmistakes/so-simple-theme@3.2.0"
 skin: "/assets/css/skins/light.css"
 locale: en-US
-title: ""
+title: " "
 url: "https://neghena.github.io"
 baseurl: "GPS_Autonomous_Nav/"
 mathjax:
