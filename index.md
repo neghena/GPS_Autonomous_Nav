@@ -19,6 +19,9 @@ tags:
 ### _Background_ 
 
 Our team’s project in the context of our domain is to build an autonomous GPS-based navigation system. The challenge in this project primarily comes down to understanding the shortcomings of the GPS being used so that its problems can be mitigated through supplementary methods. Not mentioning the differences in accuracy between GPS products at different price points, GPS’s in general tend to suffer from issues of signal interference which lead to delays in positioning updates and lack of precision as well as oscillating data even when left at a fixed position. To build a navigation system for a vehicle that will travel at high speeds, it is crucial that vehicle positioning is provided accurately and quickly. The hurdle for our project, then, is to create a reliable navigation system using GPS that can update instantaneously and precisely despite these being the inherent issues that plague the GPS. 
+
+<br>
+The next 5 parts will be brief summaries of each part of our project. For a more detailed look at our project, please refer to the video at the bottom of the page.
 <hr>
 
 <br>
@@ -33,8 +36,7 @@ To do this, we needed metrics to evaluate the two GPS models that we had: u-blox
 2. A 2DRMS of 5 meters lets us know that for 95% of the GPS outputs, we can expect the output to be within 5 meters of the true position.
 
 
-The graphs below are the results that we obtained from quality testing u-blox's NEO-M8N and ZED-F9P. For more details of how we tested our GPS, please refer to
-the video attached at the bottom of the page.
+The graphs below are the results that we obtained from quality testing u-blox's NEO-M8N and ZED-F9P.
 
 NEO-M8N Performance            |  ZED-F9P Performance
 :-------------------------:|:-------------------------:
@@ -44,7 +46,8 @@ NEO-M8N Performance            |  ZED-F9P Performance
 - For the NEO-M8N, CEP is 1.532 meters and the 2DRMS: 3.710 meters.
 
 From these results, we can see that the ZED-F9P performs significantly 
-better then the NEO-M8N. Thus, we chose the ZED-F9P to fit onto our vehicle. 
+better then the NEO-M8N. Thus, we chose the ZED-F9P to fit onto our vehicle. For more details of how we tested our GPS, please refer to
+the video attached at the bottom of the page starting at 2:05. 
 <hr>
 
 <br>
@@ -65,6 +68,7 @@ and IMU data, you can see that filtering noisy data using EKF data is much more 
 
 ![sims](Images/ground_truth_vs_estimated.png)
 Over the course of a full lap around the UCSD Warren track, the EKF algorithm was able to reduce the error in vehicle localization essentially down to zero. 
+For more details of sensor fusion, please refer to the video attached at the bottom of the page starting at 6:40. 
 <hr>
 
 <br>
@@ -77,7 +81,7 @@ Thunderhill Satellite           |  Thunderhill Binary Mask
 :-------------------------:|:-------------------------:
 ![thunderhill](Images/thunderhill.png)  |  ![binary](Images/binarythunderhill.png)
 
-Once a mask is created, it is possible to implement navigation algorithms that will generate a feasible path for the vehicle. The feasible path will contain of waypoints between the start and endpoint. The idea is that between any pair of points, there exists a straight path and the vehicle can just follow a straight path until it reaches a waypoint, rotate to the angle of the new straight path, and so on until it reaches its destination.
+Once a mask is created, it is possible to implement navigation algorithms that will generate a feasible path for the vehicle. The feasible path will contain of waypoints between the start and endpoint. The idea is that between any pair of points, there exists a straight path and the vehicle can just follow a straight path until it reaches a waypoint, rotate to the angle of the new straight path, and so on until it reaches its destination. For more details of global path planning and waypoint creation, please refer to the video attached at the bottom of the page starting at 9:00. 
 <hr>
 
 <br>
@@ -96,12 +100,15 @@ Waypoint Confirmation FlowChart           |  Distance Calculation
 :-------------------------:|:-------------------------:
 ![thunderhill](Images/WAYPOINT_CONFIRMATION_FLOWCHART.png)  |  ![distance](Images/WAYPOINT_CONFIRMATION_GRAPH.png)
 
-Once there is a reliable method for the vehicle to determine which waypoint to head towards, autonomous navigation can be simplified into determining steering angle and velocity values to send to the vehicle. When waypoint X has been reached, a new steering angle should be calculated so that the vehicle can point towards waypoint X+1 and can now, theoretically, just travel down the path between waypoint X and waypoint X+1 to reach waypoint X+1. We do a simple check to see if the current vehicle heading is the same as the upcoming waypoint’s orientation. If they are equal, there is no need to change the current steering angle, otherwise, we use a PD controller to determine the steering angle for the car based on the heading it needs to go to.
+Once there is a reliable method for the vehicle to determine which waypoint to head towards, autonomous navigation can be simplified into determining steering angle and velocity values to send to the vehicle. When waypoint X has been reached, a new steering angle should be calculated so that the vehicle can point towards waypoint X+1 and can now, theoretically, just travel down the path between waypoint X and waypoint X+1 to reach waypoint X+1. We do a simple check to see if the current vehicle heading is the same as the upcoming waypoint’s orientation. If they are equal, there is no need to change the current steering angle, otherwise, we use a PD controller to determine the steering angle for the car based on the heading it needs to go to. For more details on waypoint navigation, please refer to the video attached at the bottom of the page starting at 10:30. 
+
 <hr>
 <br>
 <br>
 
 ### Our Final Result & Presentation
+
+For a demonstration of autonomous navigation, please refer to the section starting at 15:25.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DJktMnLdI_I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
