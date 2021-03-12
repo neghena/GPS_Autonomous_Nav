@@ -1,7 +1,7 @@
 ---
 title: "GPS Based Autonomous Navigation"
 image: 
-  path: Images/snazzy-image-2.png
+  path: Images/snazzy-image-3.png
   caption: "Photo from [SnazzyMaps](https://snazzymaps.com/style/74/becomeadinosaur)"
 categories:
   - Layout
