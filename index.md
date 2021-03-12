@@ -18,7 +18,7 @@ tags:
 
 ### _Background_ 
 
-Our team’s project in the context of our domain is to build an autonomous GPS-based navigation system. The challenge in this project primarily comes down to understanding the shortcomings of the GPS being used so that its problems can be mitigated through supplementary methods. Not mentioning the differences in accuracy between GPS products at different price points, GPS’s in general tend to suffer from issues of signal interference which lead to delays in positioning updates and lack of precision as well as oscillating data even when left at a fixed position. To build a navigation system for a vehicle that will travel at high speeds, it is crucial that vehicle positioning is provided accurately and quickly. The hurdle for our project, then, is to create a reliable navigation system using GPS that can update instantaneously and precisely despite these being the inherent issues that plague the GPS.
+Our team’s project in the context of our domain is to build an autonomous GPS-based navigation system. The challenge in this project primarily comes down to understanding the shortcomings of the GPS being used so that its problems can be mitigated through supplementary methods. Not mentioning the differences in accuracy between GPS products at different price points, GPS’s in general tend to suffer from issues of signal interference which lead to delays in positioning updates and lack of precision as well as oscillating data even when left at a fixed position. To build a navigation system for a vehicle that will travel at high speeds, it is crucial that vehicle positioning is provided accurately and quickly. The hurdle for our project, then, is to create a reliable navigation system using GPS that can update instantaneously and precisely despite these being the inherent issues that plague the GPS. 
 <hr>
 
 <br>
@@ -33,7 +33,8 @@ To do this, we needed metrics to evaluate the two GPS models that we had: u-blox
 2. A 2DRMS of 5 meters lets us know that for 95% of the GPS outputs, we can expect the output to be within 5 meters of the true position.
 
 
-The graphs below are the results that we obtained from quality testing u-blox's NEO-M8N and ZED-F9P. 
+The graphs below are the results that we obtained from quality testing u-blox's NEO-M8N and ZED-F9P. For more details of how we tested our GPS, please refer to
+the video attached at the bottom of the page.
 
 NEO-M8N Performance            |  ZED-F9P Performance
 :-------------------------:|:-------------------------:
@@ -43,7 +44,7 @@ NEO-M8N Performance            |  ZED-F9P Performance
 - For the NEO-M8N, CEP is 1.532 meters and the 2DRMS: 3.710 meters.
 
 From these results, we can see that the ZED-F9P performs significantly 
-better then the NEO-M8N. Thus, we chose the ZED-F9P to fit onto our vehicle.
+better then the NEO-M8N. Thus, we chose the ZED-F9P to fit onto our vehicle. 
 <hr>
 
 <br>
@@ -61,17 +62,21 @@ We simulated some noise in the y-axis specifically so the readings are erratic a
 The blue arrow is the odometry and IMU data after it has been filtered by EKF. There are actually multiple blue arrows stacked 
 on top of each other as EKF filters out each noisy reading to produce a consistent vehicle positioning. Compared to the raw odometry
 and IMU data, you can see that filtering noisy data using EKF data is much more accurate to the vehicle’s positioning in both the x and y direction. 
-<hr>
-
-<br>
-<br>
 
 ![sims](Images/ground_truth_vs_estimated.png)
-Our simulated tests of the vehicle proved to be successful! Over the course of a full lap around the UCSD Warren track, the EKF algorithm was able to reduce the error in localization error essentially down to zero. 
+Over the course of a full lap around the UCSD Warren track, the EKF algorithm was able to reduce the error in vehicle localization essentially down to zero. 
 <hr>
 
 <br>
 <br>
+
+### _Part 3: Global Path Planning_
+Creating an autonomous navigation system that is only reliant on GPS is essentially the same thing as driving blindfolded. To base navigation purely on GPS, the first requirement is to obtain a detailed map of the desired track to race on. This navigation map is a binary masked image where white indicates allowable driving area and black represents non-drivable areas. Using the Thunderhill Raceway track in Willows, CA we obtained high resolution satellite images that served as a basis for a navigation map. From this satellite image, a combination of both automatic and manual image processing techniques can be used to create the final binary mask. Once a mask is created, it is possible to implement navigation algorithms that will generate a feasible path for the vehicle. 
+
+Thunderhill Satellite           |  Thunderhill Binary Mask
+:-------------------------:|:-------------------------:
+![thunderhill](Images/thunderhill.png)  |  ![binary](Images/binarythunderhill.png)
+
 
 ### _Part 4: Waypoint Selection and Navigation_
 
