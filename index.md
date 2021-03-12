@@ -21,7 +21,7 @@ tags:
 Our team’s project in the context of our domain is to build an autonomous GPS-based navigation system. The challenge in this project primarily comes down to understanding the shortcomings of the GPS being used so that its problems can be mitigated through supplementary methods. Not mentioning the differences in accuracy between GPS products at different price points, GPS’s in general tend to suffer from issues of signal interference which lead to delays in positioning updates and lack of precision as well as oscillating data even when left at a fixed position. To build a navigation system for a vehicle that will travel at high speeds, it is crucial that vehicle positioning is provided accurately and quickly. The hurdle for our project, then, is to create a reliable navigation system using GPS that can update instantaneously and precisely despite these being the inherent issues that plague the GPS. 
 
 <br>
-The next 5 sections will be brief summaries of each part of our project. For a more detailed look at our project, please refer to the our [presentation](https://www.youtube.com/embed/DJktMnLdI_I "Presentation").
+The next 5 sections will be brief summaries of each part of our project. For a more detailed look at our project, please refer to our [presentation](https://www.youtube.com/embed/DJktMnLdI_I "Presentation").
 <hr>
 
 <br>
@@ -47,7 +47,7 @@ NEO-M8N Performance            |  ZED-F9P Performance
 
 From these results, we can see that the ZED-F9P performs significantly 
 better then the NEO-M8N. Thus, we chose the ZED-F9P to fit onto our vehicle. For more details of how we tested our GPS, please refer to
-the video attached at the bottom of the page starting at [2:05](https://youtu.be/DJktMnLdI_I?t=125 "Presentation"). 
+the our presentation starting at [2:05](https://youtu.be/DJktMnLdI_I?t=125 "Presentation"). 
 <hr>
 
 <br>
@@ -68,7 +68,7 @@ and IMU data, you can see that filtering noisy data using EKF data is much more 
 
 ![sims](Images/ground_truth_vs_estimated.png)
 Over the course of a full lap around the UCSD Warren track, the EKF algorithm was able to reduce the error in vehicle localization essentially down to zero. 
-For more details of sensor fusion, please refer to the video attached at the bottom of the page starting at [6:40](https://youtu.be/DJktMnLdI_I?t=394 "Presentation"). 
+For more details of sensor fusion, please refer to our presentation starting at [6:40](https://youtu.be/DJktMnLdI_I?t=394 "Presentation"). 
 <hr>
 
 <br>
@@ -81,7 +81,7 @@ Thunderhill Satellite           |  Thunderhill Binary Mask
 :-------------------------:|:-------------------------:
 ![thunderhill](Images/thunderhill.png)  |  ![binary](Images/binarythunderhill.png)
 
-Once a mask is created, it is possible to implement navigation algorithms that will generate a feasible path for the vehicle. The feasible path will consist of waypoints between the start and endpoint. The idea is that between any pair of points, there exists a straight path and the vehicle can just follow one of these straight paths until it reaches a waypoint, rotate to the angle of the new straight path, and so on until it reaches its destination. For more details of global path planning and waypoint creation, please refer to the video attached at the bottom of the page starting at [9:00](https://youtu.be/DJktMnLdI_I?t=535 "Presentation"). 
+Once a mask is created, it is possible to implement navigation algorithms that will generate a feasible path for the vehicle. The feasible path will consist of waypoints between the start and endpoint. The idea is that between any pair of points, there exists a straight path and the vehicle can just follow one of these straight paths until it reaches a waypoint, rotate to the angle of the new straight path, and so on until it reaches its destination. For more details of global path planning and waypoint creation, please refer to our presentation starting at [9:00](https://youtu.be/DJktMnLdI_I?t=535 "Presentation"). 
 <hr>
 
 <br>
@@ -100,7 +100,7 @@ Waypoint Confirmation FlowChart           |  Distance Calculation
 :-------------------------:|:-------------------------:
 ![thunderhill](Images/WAYPOINT_CONFIRMATION_FLOWCHART.png)  |  ![distance](Images/WAYPOINT_CONFIRMATION_GRAPH.png)
 
-Once there is a reliable method for the vehicle to determine which waypoint to head towards, autonomous navigation can be simplified into determining steering angle and velocity values to send to the vehicle. When waypoint X has been reached, a new steering angle should be calculated so that the vehicle can point towards waypoint X+1 and can now, theoretically, just travel down the path between waypoint X and waypoint X+1 to reach waypoint X+1. We do a simple check to see if the current vehicle heading is the same as the upcoming waypoint’s orientation. If they are equal, there is no need to change the current steering angle, otherwise, we use a PD controller to determine the steering angle for the car based on the heading it needs to go to. For more details on waypoint navigation, please refer to the video attached at the bottom of the page starting at [10:30](https://youtu.be/DJktMnLdI_I?t=634 "Presentation"). 
+Once there is a reliable method for the vehicle to determine which waypoint to head towards, autonomous navigation can be simplified into determining steering angle and velocity values to send to the vehicle. When waypoint X has been reached, a new steering angle should be calculated so that the vehicle can point towards waypoint X+1 and can now, theoretically, just travel down the path between waypoint X and waypoint X+1 to reach waypoint X+1. We do a simple check to see if the current vehicle heading is the same as the upcoming waypoint’s orientation. If they are equal, there is no need to change the current steering angle, otherwise, we use a PD controller to determine the steering angle for the car based on the heading it needs to go to. For more details on waypoint navigation, please refer to our presentation starting at [10:30](https://youtu.be/DJktMnLdI_I?t=634 "Presentation"). 
 
 <hr>
 <br>
@@ -108,7 +108,7 @@ Once there is a reliable method for the vehicle to determine which waypoint to h
 
 ### Our Final Result & Presentation
 
-For a demonstration of autonomous navigation, please refer to the section starting at [15:25](https://youtu.be/DJktMnLdI_I?t=925 "Presentation").
+For a demonstration of autonomous navigation, please refer to the our presentation starting at [15:25](https://youtu.be/DJktMnLdI_I?t=925 "Presentation").
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DJktMnLdI_I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
