@@ -11,7 +11,7 @@ tags:
   - layout
 
 ---
-<p style="text-align:center">An exploration in autonomous driving built around GPS</p>
+<p style="text-align:center">An exploration in autonomous driving built around the GPS</p>
 <hr>
 
 ### Our Project 
@@ -20,6 +20,10 @@ Our team’s project in the context of our domain is to build an autonomous GPS-
 
 ### Part 1: GPS Selection
 
+Finding a GPS accurate enough was a crucial part of our project as a navigation system built on a faulty GPS can only be so reliable. 
+To do this, we had to find metrics and develop testing procedures to compare the two GPS models that we had. The graphs below are the 
+results that we obtained from testing u-blox's NEO-M8N and ZED-F9P. [Display text](a "Hover text")
+
 NEO-M8N Performance            |  ZED-F9P Performance
 :-------------------------:|:-------------------------:
 ![neo](Images/neo_m8n_cep_2drms.png)  |  ![zed](Images/zed_f9p_park_cep_2drms.png)
@@ -27,10 +31,7 @@ NEO-M8N Performance            |  ZED-F9P Performance
 - For the ZED-F9P, CEP is 0.097 meters and the 2DRMS is 0.233 meters.
 - For the NEO-M8N, CEP is 1.532 meters and the 2DRMS: 3.710 meters.
 
-
-Finding a GPS accurate enough was a crucial part of our project as a navigation system built on a faulty GPS can only be so reliable. 
-To do this, we had to find metrics and develop testing procedures to compare the two GPS models that we had. The graphs above are the 
-results that we obtained from testing u-blox's NEO-M8N and ZED-F9P From these results, we can see that the ZED-F9P performs significantly 
+From these results, we can see that the ZED-F9P performs significantly 
 better then the NEO-M8N. Thus we chose this GPS for the purposes of developing an autonomously navigating vehicle! 
 
 ### Part 2: Sensor Fusion
