@@ -21,7 +21,7 @@ tags:
 Our team’s project in the context of our domain is to build an autonomous GPS-based navigation system. The challenge in this project primarily comes down to understanding the shortcomings of the GPS being used so that its problems can be mitigated through supplementary methods. Not mentioning the differences in accuracy between GPS products at different price points, GPS’s in general tend to suffer from issues of signal interference which lead to delays in positioning updates and lack of precision as well as oscillating data even when left at a fixed position. To build a navigation system for a vehicle that will travel at high speeds, it is crucial that vehicle positioning is provided accurately and quickly. The hurdle for our project, then, is to create a reliable navigation system using GPS that can update instantaneously and precisely despite these being the inherent issues that plague the GPS. 
 
 <br>
-The next 5 sections will be brief summaries of each stage of our project. For a more detailed look and explanations, please refer to our [presentation](https://www.youtube.com/embed/DJktMnLdI_I "Presentation").
+The next 5 sections will be brief summaries of each stage of our project. For a more detailed look and explanation, please refer to our [presentation](https://www.youtube.com/embed/DJktMnLdI_I "Presentation").
 <hr>
 
 <br>
