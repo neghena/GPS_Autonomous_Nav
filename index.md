@@ -3,12 +3,7 @@ title: "GPS Based Autonomous Navigation"
 image: 
   path: ./Images/map.png
   caption: "Photo from [SNAZZY MAPS](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
-categories:
-  - Layout
-tags:
-  - content
-  - image
-  - layout
+  
 ---
 
 ## An exploration into autonomous navigation built around GPS
