@@ -1,6 +1,10 @@
-# GPS Based Autonomous Navigation
-
 ![map](Images/snazzy-image-2.png)
+
+---
+
+title: "GPS Based Autonomous Navigation"
+
+---
 
 ## An exploration into autonomous navigation built around GPS
 
