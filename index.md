@@ -1,8 +1,8 @@
 ---
-title: "Layout: Hero Image"
+title: "GPS Based Autonomous Navigation"
 image: 
-  path: Images/snazzy-image-2.png
-  caption: "Photo from [WeGraphics](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
+  path: Images/snazzy-image-3.png
+  caption: "Photo from [SnazzyMaps](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
 categories:
   - Layout
 tags:
