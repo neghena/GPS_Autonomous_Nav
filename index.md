@@ -12,7 +12,7 @@ tags:
 
 ---
 ## An exploration in autonomous driving built around GPS
-:-------------------------:|:-------------------------:
+<hr>
 
 ### Our Project 
 
