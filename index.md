@@ -106,7 +106,7 @@ To determine if a waypoint has been reached, we first determine a lookahead poin
 
 Waypoint Confirmation FlowChart           |  Distance Calculation
 :-------------------------:|:-------------------------:
-![thunderhill](Images/WAYPOINT_CONFIRMATION_FLOWCHART.png)  |  ![distance](Images/WAYPOINT_CONFIRMATION_GRAPH.png)
+<img src="Images/WAYPOINT_CONFIRMATION_FLOWCHART.png" class="align-center" width="500" height="500">  |  <img src="Images/WAYPOINT_CONFIRMATION_GRAPH.png" class="align-center" width="500" height="500">
 
 Once there is a reliable method for the vehicle to determine which waypoint to head towards, autonomous navigation can be simplified into determining steering angle and velocity values to send to the vehicle. When waypoint X has been reached, a new steering angle should be calculated so that the vehicle can point towards waypoint X+1 and can now, theoretically, just travel down the path between waypoint X and waypoint X+1 to reach waypoint X+1. We do a simple check to see if the current vehicle heading is the same as the upcoming waypoint’s orientation. If they are equal, there is no need to change the current steering angle, otherwise, we use a PD controller to determine the steering angle for the car based on the heading it needs to go to. 
 
