@@ -1,8 +1,8 @@
 ---
 title: "Layout: Hero Image"
 image: 
-  path: images/map.png
-  caption: "Photo from [SNAZZYMAPS](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
+  path: Images/map.png
+  caption: "Photo from [SNAZZY MAPS](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
 categories:
   - Layout
 tags:
