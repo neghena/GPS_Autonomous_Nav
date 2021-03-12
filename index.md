@@ -117,7 +117,7 @@ For more details on waypoint navigation, please refer to our presentation starti
 
 For a demonstration of autonomous navigation, please refer to the our presentation starting at [15:25](https://youtu.be/DJktMnLdI_I?t=925 "Presentation").
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DJktMnLdI_I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="align-center" width="560" height="315" src="https://www.youtube.com/embed/DJktMnLdI_I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
