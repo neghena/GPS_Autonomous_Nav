@@ -1,2 +1,4 @@
-remote_theme: "mmistakes/minimal-mistakes@4.22.0"
-minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+remote_theme: "mmistakes/so-simple-theme@3.2.0"
+skin: "/assets/css/skins/light.css"
+title: " "
+url: "https://neghena.github.io"
