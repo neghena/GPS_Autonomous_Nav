@@ -11,7 +11,7 @@ tags:
   - layout
 
 ---
-## An exploration in autonomous driving built around GPS
+<p style="text-align:center">An exploration in autonomous driving built around GPS</p>
 <hr>
 
 ### Our Project 
