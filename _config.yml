@@ -1,4 +1,8 @@
 remote_theme: "mmistakes/so-simple-theme@3.2.0"
 skin: "/assets/css/skins/light.css"
 locale: en-US
-image: /images/snazzy-image.png
+title: "TESTING"
+url: "https://neghena.github.io"
+baseurl: "GPS_Autonomous_Nav/"
+mathjax:
+  enable: true
